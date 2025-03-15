@@ -1,8 +1,10 @@
-import './App.css';
+import { GICNavbar } from "./components/Navbar/GICNavbar";
 
 function App() {
   return (
-   <>Hi Welcome</>
+    <>
+      <GICNavbar />
+    </>
   );
 }
 

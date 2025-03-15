@@ -8,4 +8,10 @@ export const formConstant = {
     printStatement: "Print statement",
     quit: "Quit",
   },
+  redirectionPath: {
+    depositPath: "/deposit",
+    withdrawPath: "/withdraw",
+    printStatementPath: "/print-statement",
+    quitPath: "/quit",
+  },
 };

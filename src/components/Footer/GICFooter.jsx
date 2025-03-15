@@ -5,10 +5,10 @@ import styled from "styled-components";
 
 const StyledFooter = styled.footer(StyledFooterConfig);
 
-export function GICFooter() {
+export const GICFooter = () => {
   return (
     <StyledFooter>
       &copy; {new Date().getFullYear()} {formConstant.footer.content}
     </StyledFooter>
   );
-}
+};

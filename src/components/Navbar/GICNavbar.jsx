@@ -7,10 +7,10 @@ const Navbar = styled(Grid2)(StyledGridConfig);
 
 const ResponsiveImage = styled.img(styledImageConfig);
 
-export function GICNavbar() {
+export const GICNavbar = () => {
   return (
     <Navbar>
       <ResponsiveImage src={logo} alt="gic-logo" />
     </Navbar>
   );
-}
+};

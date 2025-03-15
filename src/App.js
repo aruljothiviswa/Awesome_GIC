@@ -11,7 +11,7 @@ import { formConstant } from "./const";
 const App = () => {
   const router = createBrowserRouter([
     {
-      path: "/",
+      path: formConstant.redirectionPath.homePath,
       element: <HomePage />,
     },
     {

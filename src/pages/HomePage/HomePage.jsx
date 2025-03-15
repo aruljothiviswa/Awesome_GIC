@@ -1,4 +1,4 @@
-import { Grid2 } from "@mui/material";
+import { Grid2, Typography } from "@mui/material";
 import styled from "styled-components";
 import { centeredGridConfig, StyledGridConfig } from "./custom_styles";
 import { GICButton } from "../../components/Button/GICButton";
@@ -34,6 +34,9 @@ export const HomePage = () => {
   return (
     <StyledGrid>
       <CenteredGrid container spacing={2}>
+        <Grid2 item>
+          <Typography>{formConstant.title}</Typography>
+        </Grid2>
         <Grid2 item>
           <GICButton
             name={formConstant.buttonName.deposit}

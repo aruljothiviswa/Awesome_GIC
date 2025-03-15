@@ -1,0 +1,17 @@
+footer {
+  font-size: 16px; /* Default font size for desktop and laptop */
+}
+
+/* Media query for tablets and smaller devices (max-width: 1024px) */
+@media (max-width: 1024px) {
+  footer {
+    font-size: 14px;
+  }
+}
+
+/* Media query for mobile devices (max-width: 600px) */
+@media (max-width: 600px) {
+  footer {
+    font-size: 10px;
+  }
+}

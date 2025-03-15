@@ -7,6 +7,6 @@ export const StyledGridConfig = {
 };
 
 export const styledImageConfig = {
-  width: "20%",
+  width: "17%",
   height: "auto",
 };

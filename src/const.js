@@ -16,7 +16,7 @@ export const formConstant = {
     quit: "Quit",
     continue: "Continue",
     cancel: "Cancel",
-    backToHome:"Back To Home"
+    backToHome: "Back To Home",
   },
   redirectionPath: {
     homePath: "/",
@@ -39,6 +39,11 @@ export const formConstant = {
   },
   quit: {
     message: "Thank you for banking with AwesomeGIC Bank.Have a nice day!",
+  },
+  printStatement: {
+    date: "Date",
+    amount: "Amount",
+    balance: "Balance",
   },
 };
 

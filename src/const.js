@@ -23,3 +23,8 @@ export const formConstant = {
     placeholder: "Enter a number",
   },
 };
+
+export const APPLICATION_ACTION = {
+  DEPOSIT: "DEPOSIT",
+  WITHDRAW: "WITHDRAW",
+};

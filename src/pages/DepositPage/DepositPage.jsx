@@ -1,20 +1,24 @@
 import React, { useState } from "react";
 import { Button, TextField, Container, Box, Typography } from "@mui/material";
-import { formConstant } from "../../const";
+import { APPLICATION_ACTION, formConstant } from "../../const";
 import { useNavigate } from "react-router-dom";
 import { DepositPageStyles } from "./custom_style";
+import { useBankBalance } from "../../context";
 
 export const DepositPage = () => {
   const [inputValue, setInputValue] = useState("");
   const navigate = useNavigate();
+  const { dispatch } = useBankBalance();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("deposited value", inputValue);
+    dispatch({ type: APPLICATION_ACTION.DEPOSIT, amount: Number(inputValue) });
+    navigate(formConstant.redirectionPath.homePath, {
+      state: { amount: inputValue },
+    });
   };
 
   const handleCancel = () => {
-    setInputValue("");
     navigate(formConstant.redirectionPath.homePath);
   };
 
@@ -29,7 +33,7 @@ export const DepositPage = () => {
   };
 
   return (
-    <Container maxWidth="sm">
+    <Container sx={DepositPageStyles.containerStyle}>
       <Box
         component="form"
         onSubmit={handleSubmit}
@@ -37,6 +41,7 @@ export const DepositPage = () => {
       >
         <Typography>{formConstant.deposit.inputLabel}</Typography>
         <TextField
+          sx={DepositPageStyles.textBoxStyle}
           variant="outlined"
           fullWidth
           value={inputValue}

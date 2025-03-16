@@ -3,13 +3,28 @@ import styled from "styled-components";
 import { centeredGridConfig, StyledGridConfig } from "./custom_styles";
 import { GICButton } from "../../components/Button/GICButton";
 import { formConstant } from "../../const";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const StyledGrid = styled(Grid2)(StyledGridConfig);
 const CenteredGrid = styled(Grid2)(centeredGridConfig);
 
 export const HomePage = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const [title, setTitle] = useState(formConstant.title);
+
+  useEffect(() => {
+    const { amount } = location.state || {};
+    if (amount) {
+      setTitle(
+        formConstant.successTrancaction.thankyou +
+          ` $${parseFloat(amount).toFixed(2)} ` +
+          formConstant.successTrancaction.deposited +
+          formConstant.successTrancaction.anythingElse
+      );
+    }
+  }, [location]);
 
   const depositHandleClick = () => {
     console.log("depositHandleClick success");
@@ -35,7 +50,7 @@ export const HomePage = () => {
     <StyledGrid>
       <CenteredGrid container spacing={2}>
         <Grid2 item>
-          <Typography>{formConstant.title}</Typography>
+          <Typography>{title}</Typography>
         </Grid2>
         <Grid2 item>
           <GICButton

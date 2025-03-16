@@ -1,11 +1,17 @@
 export const DepositPageStyles = {
+  containerStyle: {
+    minWidth: "100%",
+    height: "100vh",
+    margin: 0,
+    background: "#d2e4ec",
+  },
   boxStyle: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
     gap: 2,
-    marginTop: 12,
+    paddingTop: 12,
   },
   buttonBoxStyle: {
     display: "flex",
@@ -17,5 +23,9 @@ export const DepositPageStyles = {
   cancelButtonStyle: {
     color: "#218838",
     borderColor: "#218838",
+  },
+  textBoxStyle: {
+    width: "50%",
+    "@media (max-width: 600px)": { width: "75%" },
   },
 };

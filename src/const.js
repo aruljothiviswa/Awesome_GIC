@@ -1,5 +1,10 @@
 export const formConstant = {
   title: " Welcome to AwesomeGIC Bank! What would you like to do?",
+  successTrancaction: {
+    thankyou: "Thank you.",
+    deposited: "has been deposited to your account.",
+    anythingElse: "Is there anything else you'd like to do?",
+  },
   footer: {
     content: "Awesome GIC. All rights reserved.",
   },

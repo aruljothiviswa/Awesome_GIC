@@ -62,9 +62,9 @@ export const PrintStatementPage = () => {
         component={Paper}
         sx={{
           maxHeight: {
-            xs: "500px",
-            sm: "450px",
-            md: "350px",
+            xs: "70vh",
+            sm: "80vh",
+            md: "60vh",
           },
           overflow: "auto",
         }}

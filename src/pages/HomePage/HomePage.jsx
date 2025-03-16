@@ -34,22 +34,18 @@ export const HomePage = () => {
   }, [location]);
 
   const depositHandleClick = () => {
-    console.log("depositHandleClick success");
     navigate(formConstant.redirectionPath.depositPath);
   };
 
   const withDrawHandleClick = () => {
-    console.log("withDrawHandleClick success");
     navigate(formConstant.redirectionPath.withdrawPath);
   };
 
   const printStatementHandleClick = () => {
-    console.log("printStatementHandleClick success");
     navigate(formConstant.redirectionPath.printStatementPath);
   };
 
   const quitHandleClick = () => {
-    console.log("quitHandleClick success");
     navigate(formConstant.redirectionPath.quitPath);
   };
 

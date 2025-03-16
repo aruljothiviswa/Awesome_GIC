@@ -9,9 +9,15 @@ export const DepositPage = () => {
   const [inputValue, setInputValue] = useState("");
   const navigate = useNavigate();
   const { dispatch } = useBankBalance();
+  const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const amount = Number(inputValue);
+    if (amount <= 0) {
+      setError(formConstant.common.validInput);
+      return;
+    }
     dispatch({ type: APPLICATION_ACTION.DEPOSIT, amount: Number(inputValue) });
     navigate(formConstant.redirectionPath.homePath, {
       state: { amount: inputValue },
@@ -49,6 +55,7 @@ export const DepositPage = () => {
           placeholder={formConstant.deposit.placeholder}
           required
         />
+        {error && <Typography color="error">{error}</Typography>}
         <Box sx={DepositPageStyles.buttonBoxStyle}>
           <Button
             sx={DepositPageStyles.continueButtonStyle}

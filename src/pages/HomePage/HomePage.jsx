@@ -15,12 +15,19 @@ export const HomePage = () => {
   const [title, setTitle] = useState(formConstant.title);
 
   useEffect(() => {
-    const { amount } = location.state || {};
+    const { amount, withDrawAmount } = location.state || {};
     if (amount) {
       setTitle(
         formConstant.successTrancaction.thankyou +
           ` $${parseFloat(amount).toFixed(2)} ` +
           formConstant.successTrancaction.deposited +
+          formConstant.successTrancaction.anythingElse
+      );
+    } else if (withDrawAmount) {
+      setTitle(
+        formConstant.successTrancaction.thankyou +
+          ` $${parseFloat(withDrawAmount).toFixed(2)} ` +
+          formConstant.successTrancaction.withdrawn +
           formConstant.successTrancaction.anythingElse
       );
     }

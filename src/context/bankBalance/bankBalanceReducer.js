@@ -15,7 +15,11 @@ export const bankBalanceReducer = (state, action) => {
         transactions: [...state.transactions, newTransaction],
       };
     case APPLICATION_ACTION.WITHDRAW:
-      return state;
+      return {
+        ...state,
+        balance: state.balance - action.amount,
+        transactions: [...state.transactions, newTransaction],
+      };
     default:
       return state;
   }

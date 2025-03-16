@@ -16,6 +16,7 @@ export const formConstant = {
     quit: "Quit",
     continue: "Continue",
     cancel: "Cancel",
+    backToHome:"Back To Home"
   },
   redirectionPath: {
     homePath: "/",
@@ -35,6 +36,9 @@ export const formConstant = {
   },
   common: {
     validInput: "Please enter an amount greater than 0.",
+  },
+  quit: {
+    message: "Thank you for banking with AwesomeGIC Bank.Have a nice day!",
   },
 };
 
